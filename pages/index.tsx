@@ -11,7 +11,7 @@ export default function Home() {
 	const SERVER_HOST =
 		ENVIRONMENT_MODE === 'development'
 			? `http://localhost:5000/video/stream`
-			: `${process.env.SERVER_HOST}/stream`;
+			: `${process.env.SERVER_HOST}/video/stream`;
 
 	const videos: VideoProp[] = videosData;
 	const [isLoading, setIsLoading] = useState(true);
@@ -61,8 +61,6 @@ export default function Home() {
 		}
 		return arr[prevIndex].title;
 	};
-
-	console.log('currentVideo: ', currentVideo);
 
 	return (
 		<div className={styles.container}>
