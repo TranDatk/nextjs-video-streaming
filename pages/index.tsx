@@ -11,7 +11,7 @@ export default function Home() {
 	const SERVER_HOST =
 		ENVIRONMENT_MODE === 'development'
 			? `http://localhost:5000/video/stream`
-			: `${process.env.SERVER_HOST}/video/stream`;
+			: `${process.env.NEXT_PUBLIC_SERVER_HOST}/video/stream`;
 
 	const videos: VideoProp[] = videosData;
 	const [isLoading, setIsLoading] = useState(true);
