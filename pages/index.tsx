@@ -11,18 +11,16 @@ export default function Home() {
 	const SERVER_HOST =
 		ENVIRONMENT_MODE === 'development'
 			? `http://localhost:5000/video/stream`
-			: 'https://nestjs-video-streaming-production.up.railway.app/video/stream';
-	console.log(ENVIRONMENT_MODE);
+			: `${process.env.SERVER_HOST}/stream`;
+
 	const videos: VideoProp[] = videosData;
 	const [isLoading, setIsLoading] = useState(true);
 	const [activeVideoIndex, setActiveVideoIndex] = useState(0);
 
-	console.log('videosData: ', videosData);
-
 	useEffect(() => {
 		setTimeout(() => {
 			if (videos.length) setIsLoading(false);
-		}, 5000);
+		}, 3000);
 	}, []);
 
 	const [currentVideo, setCurrentVideo] = useState(videos[0]);
@@ -68,11 +66,11 @@ export default function Home() {
 
 	return (
 		<div className={styles.container}>
-			<Head>
+			<Head key={'head'} className={styles.header}>
 				<title>NextJs Video Streaming</title>
 				<meta
 					name="description"
-					content="A video streaming app using Node js with Nest js framework for backend and NextJs for Frontend."
+					content="A video streaming app using Node js with Nest js framework for bSackend and NextJs for Frontend."
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
@@ -80,7 +78,31 @@ export default function Home() {
 				<JumpLoader />
 			) : (
 				<>
-					<h1>Video Streaming App in NextJs and NestJs</h1>
+					<div className={styles.header}>
+						<h1>Video Streaming App in NextJs and NestJs</h1>
+						<p>Leave me a ⭐ if you like it</p>
+						<div className={styles.github}>
+							<p>
+								&copy;{new Date().getFullYear()}
+								<a
+									href="https://github.com/TranDatk"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<span className={styles.logo}>
+										<Image
+											src="/github.png"
+											alt="GitHub Logo"
+											width={50}
+											height={50}
+										/>
+									</span>
+								</a>{' '}
+								TranDatk
+							</p>
+						</div>
+
+					</div>
 					<main className={styles.main}>
 						<VideoPlayer videoId={activeVideoIndex} serverUrl={SERVER_HOST} />
 						<VideoControls
@@ -93,27 +115,6 @@ export default function Home() {
 					</main>
 				</>
 			)}
-
-			<footer className={styles.footer}>
-				<p>
-					&copy;{new Date().getFullYear()}
-					<a
-						href="https://github.com/hesbon-osoro"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<span className={styles.logo}>
-							<Image
-								src="/github.png"
-								alt="GitHub Logo"
-								width={50}
-								height={50}
-							/>
-						</span>
-					</a>{' '}
-					wazimu
-				</p>
-			</footer>
 		</div>
 	);
 }

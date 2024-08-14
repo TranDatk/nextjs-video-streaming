@@ -41,19 +41,19 @@ const JumpLoader = () => {
 			<svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
 				<path
 					className="jumper"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 					d="M47.5,94.3c0-23.5,19.9-42.5,44.5-42.5s44.5,19,44.5,42.5"
 				/>
 				<g
 					stroke={strokeColor}
-					stroke-width="1"
+					strokeWidth="1"
 					onAnimationIteration={updateStrokeColor}
 				>
 					<ellipse
 						className="circleL"
 						fill="none"
-						stroke-miterlimit="10"
+						strokeMiterlimit="10"
 						cx="47.2"
 						cy="95.6"
 						rx="10.7"
@@ -62,7 +62,7 @@ const JumpLoader = () => {
 					<ellipse
 						className="circleR"
 						fill="none"
-						stroke-miterlimit="10"
+						strokeMiterlimit="10"
 						cx="136.2"
 						cy="95.6"
 						rx="10.7"
@@ -71,8 +71,8 @@ const JumpLoader = () => {
 				</g>
 				<path
 					className="jumper clone"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 					d="M47.5,94.3c0-23.5,19.9-42.5,44.5-42.5s44.5,19,44.5,42.5"
 				/>
 			</svg>

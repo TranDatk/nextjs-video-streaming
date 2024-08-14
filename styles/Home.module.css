@@ -8,7 +8,7 @@
 	width: 100vw;
 }
 
-.container > h1 {
+.container>h1 {
 	height: 10vh;
 	width: 100vw;
 	padding: 2rem 0;
@@ -17,10 +17,25 @@
 	text-transform: uppercase;
 }
 
+.github {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.github p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+	width: auto;
+	height: auto;
+}
+
 .main {
 	height: 80vh;
 	width: 100vw;
-	padding: 4rem 0;
+	padding: 4rem;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -29,23 +44,14 @@
 	max-width: 1000px;
 }
 
-.footer {
-	height: 10vh;
+.header {
+	height: 80vh;
 	width: 100vw;
 	display: flex;
-	padding: 2rem 0;
-	border-top: 1px solid #eaeaea;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
-}
-
-.footer p {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-grow: 1;
-	width: auto;
-	height: auto;
+	gap: 1rem;
+	margin-top: 9vh;
 }
 
 .logo {
